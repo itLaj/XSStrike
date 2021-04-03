@@ -1,6 +1,6 @@
 import re
 
-
+#爬取页面中的表单
 def zetanize(response):
     def e(string):
         return string.encode('utf-8')

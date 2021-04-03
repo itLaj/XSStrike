@@ -7,7 +7,7 @@ from core.log import setup_logger
 
 logger = setup_logger(__name__)
 
-
+#探索waf
 def wafDetector(url, params, headers, GET, delay, timeout):
     with open(sys.path[0] + '/db/wafSignatures.json', 'r') as file:
         wafSignatures = json.load(file)

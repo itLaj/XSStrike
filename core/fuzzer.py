@@ -11,8 +11,9 @@ from core.log import setup_logger
 
 logger = setup_logger(__name__)
 
-
+#fuzz测试的核心代码
 def fuzzer(url, params, headers, GET, delay, timeout, WAF, encoding):
+    #遍历fuzz,将fuzz赋值给相关参数
     for fuzz in fuzzes:
         if delay == 0:
             delay = 0
@@ -22,9 +23,12 @@ def fuzzer(url, params, headers, GET, delay, timeout, WAF, encoding):
             if encoding:
                 fuzz = encoding(unquote(fuzz))
             data = replaceValue(params, xsschecker, fuzz, copy.deepcopy)
+            #带着fuzz参数去请求
             response = requester(url, data, headers, GET, delay/2, timeout)
         except:
+            #若出现异常，说明waf丢弃了恶意请求
             logger.error('WAF is dropping suspicious requests.')
+            #等待一段时间后，再请求一下，确认ip是否被屏蔽，被屏蔽了就停止fuzz
             if delay == 0:
                 logger.info('Delay has been increased to %s6%s seconds.' % (green, end))
                 delay += 6

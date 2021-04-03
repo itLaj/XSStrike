@@ -6,7 +6,7 @@ from urllib.parse import urlparse
 import core.config
 from core.config import xsschecker
 
-
+#一些小函数
 def converter(data, url=False):
     if 'str' in str(type(data)):
         if url:
@@ -111,7 +111,15 @@ def getUrl(url, GET):
 
 def extractScripts(response):
     scripts = []
-    matches = re.findall(r'(?s)<script.*?>(.*?)</script>', response.lower())
+    matches = re.findall(r'(?s)<script.*?>(.*?)</script>', response.lower())#提取script代码
+    #re.findall() 函数可以遍历匹配，可以获取字符串中所有匹配的字符串，返回一个列表
+    #lower() 转换字符串中所有大写字符为小写
+    #def findall(pattern, string, flags=0):
+    # 第一个参数，正则表达式
+    # 第二个参数，搜索的是那些字符串
+    # 第三个参数，匹配的模式，其中re.S使匹配包括换行在内的所有字符。findall()函数是逐行匹配的。
+    # 返回string中所有与pattern相匹配的全部字串，返回形式为数组
+
     for match in matches:
         if xsschecker in match:
             scripts.append(match)
@@ -158,7 +166,7 @@ def genGen(fillings, eFillings, lFillings, eventHandlers, tags, functions, ends,
                                     vectors.append(vector)
     return vectors
 
-
+#将需要测试的参数都作为一个字典返回
 def getParams(url, data, GET):
     params = {}
     if '=' in url:

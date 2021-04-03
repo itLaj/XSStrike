@@ -1,6 +1,6 @@
 from core.checker import checker
 
-
+#检查过滤器
 def filterChecker(url, params, headers, GET, delay, occurences, timeout, encoding):
     positions = occurences.keys()
     sortedEfficiencies = {}

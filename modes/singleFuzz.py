@@ -1,3 +1,6 @@
+#fuzzing test 模糊测试 
+# 充分利用了机器的能力：随机生成和发送数据
+
 import copy
 from urllib.parse import urlparse
 
@@ -11,7 +14,7 @@ from core.log import setup_logger
 
 logger = setup_logger(__name__)
 
-
+#fuzz测试
 def singleFuzz(target, paramData, encoding, headers, delay, timeout):
     GET, POST = (False, True) if paramData else (True, False)
     # If the user hasn't supplied the root url with http(s), we will handle it

@@ -12,7 +12,7 @@ logger = setup_logger(__name__)
 
 warnings.filterwarnings('ignore')  # Disable SSL related warnings
 
-
+#发送http请求的函数
 def requester(url, data, headers, GET, delay, timeout):
     if getVar('jsonData'):
         data = converter(data)

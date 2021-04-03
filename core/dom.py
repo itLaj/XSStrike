@@ -2,7 +2,7 @@ import re
 
 from core.colors import red, end, yellow
 
-
+#搜索dom-xss相关特征
 def dom(response):
     highlighted = []
     sources = r'''document\.(URL|documentURI|URLUnencoded|baseURI|cookie|referrer)|location\.(href|search|hash|pathname)|window\.name|history\.(pushState|replaceState)(local|session)Storage'''

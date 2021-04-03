@@ -8,7 +8,7 @@ from core.log import setup_logger
 
 logger = setup_logger(__name__)
 
-
+#更新时会更新的函数
 def updater():
     logger.run('Checking for updates')
     latestCommit = get(

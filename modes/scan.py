@@ -18,7 +18,7 @@ from core.log import setup_logger
 
 logger = setup_logger(__name__)
 
-
+#扫描功能
 def scan(target, paramData, encoding, headers, delay, timeout, skipDOM, find, skip):
     GET, POST = (False, True) if paramData else (True, False)
     # If the user hasn't supplied the root url with http(s), we will handle it
@@ -31,7 +31,7 @@ def scan(target, paramData, encoding, headers, delay, timeout, skipDOM, find, sk
             target = 'http://' + target
     logger.debug('Scan target: {}'.format(target))
     response = requester(target, {}, headers, GET, delay, timeout).text
-
+    #dom XSS检查--用户可选
     if not skipDOM:
         logger.run('Checking for DOM vulnerabilities')
         highlighted = dom(response)

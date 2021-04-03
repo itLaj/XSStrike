@@ -7,7 +7,7 @@ from core.config import xsschecker
 from core.requester import requester
 from core.utils import replaceValue, fillHoles
 
-
+#检查过滤器
 def checker(url, params, headers, GET, delay, payload, positions, timeout, encoding):
     checkString = 'st4r7s' + payload + '3nd'
     if encoding:

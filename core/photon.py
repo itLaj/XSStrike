@@ -11,7 +11,7 @@ from plugins.retireJs import retireJs
 
 logger = setup_logger(__name__)
 
-
+#爬取页面中表单和链接
 def photon(seedUrl, headers, level, threadCount, delay, timeout, skipDOM):
     forms = []  # web forms
     processed = set()  # urls that have been crawled

@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+#处理命令行参数 根据用户输入命令行参数调用相关参数
 
 from __future__ import print_function
 

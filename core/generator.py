@@ -2,7 +2,7 @@ from core.config import xsschecker, badTags, fillings, eFillings, lFillings, jFi
 from core.jsContexter import jsContexter
 from core.utils import randomUpper as r, genGen, extractScripts
 
-
+#payload生成引擎
 def generator(occurences, response):
     scripts = extractScripts(response)
     index = 0

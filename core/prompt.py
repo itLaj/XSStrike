@@ -7,7 +7,7 @@ from core.log import setup_logger
 
 logger = setup_logger(__name__)
 
-
+#添加headers时弹出一个编辑器，默认为nano
 def prompt(default=None):
     # try assigning default editor, if fails, use default
     editor = os.environ.get('EDITOR', defaultEditor)

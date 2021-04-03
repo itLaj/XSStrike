@@ -2,6 +2,7 @@ import sys
 import os
 import platform
 
+#定义颜色变量，输出不同类型消息可以输出不同颜色
 colors = True  # Output should be colored
 machine = sys.platform  # Detecting the os of current system
 checkplatform = platform.platform() # Get current version of OS

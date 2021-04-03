@@ -1,6 +1,6 @@
 import base64 as b64
 import re
-
+#编码相关函数
 
 def base64(string):
     if re.match(r'^[A-Za-z0-9+\/=]+$', string) and (len(string) % 4) == 0:
