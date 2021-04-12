@@ -24,6 +24,7 @@ def dom(response):
                         for controlledVariable in allControlledVariables:
                             if controlledVariable in part:
                                 controlledVariables.add(re.search(r'[a-zA-Z$_][a-zA-Z0-9$_]+', part).group().replace('$', '\$'))
+                # 找出newLine中所有与sources相匹配的全部字串，返回形式为迭代器
                 pattern = re.finditer(sources, newLine)
                 for grp in pattern:
                     if grp:
