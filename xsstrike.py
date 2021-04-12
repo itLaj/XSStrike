@@ -172,15 +172,19 @@ elif not recursive and not args_seeds:
     if args_file:
         bruteforcer(target, paramData, payloadList, encoding, headers, delay, timeout)
     else:
+        # 参数为 -u 时函数运行到这里
         scan(target, paramData, encoding, headers, delay, timeout, skipDOM, find, skip)
 else:
     if target:
         seedList.append(target)
     for target in seedList:
         logger.run('Crawling the target')
+        #取出网络协议
         scheme = urlparse(target).scheme
         logger.debug('Target scheme: {}'.format(scheme))
+        # 主机地址          
         host = urlparse(target).netloc
+        print("host:" + host + " " + scheme )
         main_url = scheme + '://' + host
         crawlingResult = photon(target, headers, level,
                                 threadCount, delay, timeout, skipDOM)

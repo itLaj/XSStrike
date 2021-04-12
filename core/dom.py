@@ -16,6 +16,7 @@ def dom(response):
             for newLine in script:
                 line = newLine
                 parts = line.split('var ')
+                print(parts)
                 controlledVariables = set()
                 allControlledVariables = set()
                 if len(parts) > 1:

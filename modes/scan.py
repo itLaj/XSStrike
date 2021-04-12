@@ -31,6 +31,8 @@ def scan(target, paramData, encoding, headers, delay, timeout, skipDOM, find, sk
             target = 'http://' + target
     logger.debug('Scan target: {}'.format(target))
     response = requester(target, {}, headers, GET, delay, timeout).text
+    # print("response :" + response)
+
     #dom XSS检查--用户可选
     if not skipDOM:
         logger.run('Checking for DOM vulnerabilities')
